@@ -18,10 +18,11 @@ from django.urls import path
 from django.conf.urls import url, include
 from django.conf import settings
 from django.conf.urls.static import static
+import webapp.views as views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-  
+    url(r'^$', views.index),
     url(r'^web/', include('webapp.urls')),
     url(r'^summernote/', include('django_summernote.urls')),
 ]

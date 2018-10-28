@@ -1,4 +1,4 @@
-from django.shortcuts import render, render_to_response, redirect
+from django.shortcuts import render, render_to_response, redirect, redirect
 from django.http import HttpResponse
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -18,6 +18,10 @@ from webapp.forms import UserForm
 import json
 from search.documents import StoreDocument, OfferDocument
 from itertools import chain
+
+
+def index(request):
+	return redirect('/web/')
 
 def handler404(request):
     return render(request, '404.html', status=404)
